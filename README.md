@@ -21,7 +21,7 @@ vendor/bin/typo3 extension:setup
 vendor/bin/typo3 cache:flush
 ```
 
-Ist das Paket (noch) nicht auf Packagist, vorher das GitHub-Repository eintragen:
+Ohne Zugriff auf Packagist geht es auch direkt über GitHub, vorher eintragen:
 
 ```fish
 composer config repositories.drk-dienstabende vcs https://github.com/rubenvitt/typo3-drk-dienstabende

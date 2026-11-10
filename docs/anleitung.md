@@ -15,31 +15,30 @@ kommenden Dienstabende als aufklappbare Liste, im Aussehen der DRK-Seiten.
 
 | Schritt | Wer | Wie oft |
 |---|---|---|
-| 1. Paket bei Packagist anmelden | du | einmal |
+| 1. Paket bei Packagist veröffentlichen | du | einmal (erledigt) |
 | 2. Neue Version herausgeben | du | bei jeder Änderung |
 | 3. Plugin installieren und erlaubte Adresse eintragen | Betreiber der DRK-Plattform | einmal, danach Updates |
 | 4. Element auf der Seite anlegen | Redaktion des Kreisverbands | einmal pro Seite |
 
-Schon erledigt: Das Repository ist öffentlich auf GitHub
-(<https://github.com/rubenvitt/typo3-drk-dienstabende>), Version 0.1.3 ist als Release mit ZIP-Datei
-veröffentlicht, und neue Releases baut GitHub ab jetzt automatisch.
+## 1. Veröffentlicht: GitHub und Packagist
 
-## 1. Bei Packagist anmelden (einmalig, ca. 5 Minuten)
+- Quelltext: <https://github.com/rubenvitt/typo3-drk-dienstabende>
+- Paket: <https://packagist.org/packages/rubeen/drk-dienstabende>, installierbar mit
+  `composer require rubeen/drk-dienstabende`
+- ZIP-Datei für Installationen ohne Composer: unter **Releases** im GitHub-Repository
 
-Packagist ist das zentrale Verzeichnis für PHP-Pakete. Erst wenn das Plugin dort steht, lässt es
-sich mit einem einzigen Befehl installieren: `composer require rubeen/drk-dienstabende`.
+Packagist übernimmt neue Versionen von GitHub selbst. Steht auf der Paketseite einmal ein gelber
+Hinweis „This package is not auto-updated“, unter <https://packagist.org/profile/> bei
+„GitHub Hook Sync“ auf **Retry hook synchronization** klicken.
 
-1. <https://packagist.org> öffnen und oben rechts **Sign in** → **Login with GitHub** wählen.
-   GitHub fragt nach der Freigabe, bestätigen.
-2. Oben auf **Submit** klicken.
-3. Ins Feld **Repository URL** eintragen: `https://github.com/rubenvitt/typo3-drk-dienstabende`
-4. **Check** und dann **Submit** klicken. Packagist liest die `composer.json` und zeigt das Paket
-   `rubeen/drk-dienstabende` mit Version 0.1.3 an.
-5. Auf der Paketseite prüfen, dass **kein** gelber Hinweis „This package is not auto-updated“
-   erscheint. Fehlt die automatische Aktualisierung, unter <https://packagist.org/profile/> bei
-   „GitHub Hook Sync“ auf **Retry hook synchronization** klicken.
+Die Versionen 0.1.0 bis 0.1.2 sind Zwischenstände ohne Release und sollten weg, damit niemand sie
+installiert. Löschen kannst du sie so (fish), Packagist entfernt sie danach von selbst:
 
-Danach übernimmt Packagist jede neue Version von GitHub selbst, du musst dort nichts mehr tun.
+```fish
+cd ~/dev/personal/drk/typo3-drk-dienstabende
+git push origin :refs/tags/v0.1.0 :refs/tags/v0.1.1 :refs/tags/v0.1.2
+git tag -d v0.1.0 v0.1.1 v0.1.2
+```
 
 ## 2. Neue Version herausgeben
 
