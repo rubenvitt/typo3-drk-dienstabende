@@ -21,7 +21,7 @@ kommenden Dienstabende als aufklappbare Liste, im Aussehen der DRK-Seiten.
 | 4. Element auf der Seite anlegen | Redaktion des Kreisverbands | einmal pro Seite |
 
 Schon erledigt: Das Repository ist öffentlich auf GitHub
-(<https://github.com/rubenvitt/typo3-drk-dienstabende>), Version 0.1.2 ist als Release mit ZIP-Datei
+(<https://github.com/rubenvitt/typo3-drk-dienstabende>), Version 0.1.3 ist als Release mit ZIP-Datei
 veröffentlicht, und neue Releases baut GitHub ab jetzt automatisch.
 
 ## 1. Bei Packagist anmelden (einmalig, ca. 5 Minuten)
@@ -34,7 +34,7 @@ sich mit einem einzigen Befehl installieren: `composer require rubeen/drk-dienst
 2. Oben auf **Submit** klicken.
 3. Ins Feld **Repository URL** eintragen: `https://github.com/rubenvitt/typo3-drk-dienstabende`
 4. **Check** und dann **Submit** klicken. Packagist liest die `composer.json` und zeigt das Paket
-   `rubeen/drk-dienstabende` mit Version 0.1.2 an.
+   `rubeen/drk-dienstabende` mit Version 0.1.3 an.
 5. Auf der Paketseite prüfen, dass **kein** gelber Hinweis „This package is not auto-updated“
    erscheint. Fehlt die automatische Aktualisierung, unter <https://packagist.org/profile/> bei
    „GitHub Hook Sync“ auf **Retry hook synchronization** klicken.
@@ -45,7 +45,7 @@ Danach übernimmt Packagist jede neue Version von GitHub selbst, du musst dort n
 
 Wenn du etwas am Plugin geändert hast:
 
-1. In `ext_emconf.php` die Versionsnummer erhöhen, z. B. von `0.1.2` auf `0.2.0`.
+1. In `ext_emconf.php` die Versionsnummer erhöhen, z. B. von `0.1.3` auf `0.2.0`.
    Faustregel: letzte Stelle für Fehlerbehebungen, mittlere Stelle für neue Funktionen.
 2. Committen und einen Tag mit derselben Nummer und einem `v` davor setzen (fish):
 

@@ -38,7 +38,7 @@ final class EventMapper
             try {
                 // A given offset wins over $timezone; date-only and offset-less values are Berlin time.
                 $date = (new \DateTimeImmutable($start, $timezone))->setTimezone($timezone);
-            } catch (\Exception) {
+            } catch (\Throwable) { // Throwable: with Xdebug a malformed date surfaces as Error, not Exception
                 continue;
             }
             if ($date < $today) {

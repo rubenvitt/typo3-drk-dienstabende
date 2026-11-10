@@ -7,8 +7,14 @@ require __DIR__ . '/../Classes/Domain/EventMapper.php';
 
 use Rubeen\DrkDienstabende\Domain\EventMapper;
 
-ini_set('zend.assertions', '1');
-ini_set('assert.exception', '1');
+// Own check instead of assert(): assertions are compiled out where php.ini sets zend.assertions=-1.
+function check(bool $ok, string $message = ''): void
+{
+    if (!$ok) {
+        fwrite(STDERR, 'FAIL: ' . $message . ' (line ' . debug_backtrace()[0]['line'] . ")\n");
+        exit(1);
+    }
+}
 
 $now = new DateTimeImmutable('2026-11-11T20:30:00+01:00');
 $json = ['events' => [
@@ -23,13 +29,13 @@ $json = ['events' => [
 ]];
 
 $events = EventMapper::map($json, $now);
-assert(array_column($events, 'title') === ['Heute, UTC', 'Später', 'Ganztägig'], 'filters past/invalid, sorts');
-assert($events[0]['time'] === '19:00', 'UTC is shown in Berlin time');
-assert($events[0]['dayShort'] === 'Mi., 11.11.');
-assert($events[1]['dayLong'] === 'Mittwoch, 25. November');
-assert($events[1]['month'] === 'November 2026');
-assert($events[2]['time'] === null, 'date-only has no time');
-assert(count(EventMapper::map($json, $now, 2)) === 2, 'limit');
-assert(EventMapper::map(null, $now) === [] && EventMapper::map(['events' => 'x'], $now) === [] && EventMapper::map([1, 2], $now) === []);
+check(array_column($events, 'title') === ['Heute, UTC', 'Später', 'Ganztägig'], 'filters past/invalid, sorts');
+check($events[0]['time'] === '19:00', 'UTC is shown in Berlin time');
+check($events[0]['dayShort'] === 'Mi., 11.11.');
+check($events[1]['dayLong'] === 'Mittwoch, 25. November');
+check($events[1]['month'] === 'November 2026');
+check($events[2]['time'] === null, 'date-only has no time');
+check(count(EventMapper::map($json, $now, 2)) === 2, 'limit');
+check(EventMapper::map(null, $now) === [] && EventMapper::map(['events' => 'x'], $now) === [] && EventMapper::map([1, 2], $now) === []);
 
 echo "ok\n";
