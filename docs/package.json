@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "Screenshots for the README (needs a running test server and Google Chrome)",
+  "devDependencies": {
+    "puppeteer-core": "^25.16.0"
+  }
+}

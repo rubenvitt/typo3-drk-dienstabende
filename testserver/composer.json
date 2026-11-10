@@ -1,0 +1,29 @@
+{
+  "name": "rubeen/drk-dienstabende-testserver",
+  "description": "Lokales TYPO3 zum Ausprobieren der Extension drk_dienstabende",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "repositories": [
+    { "type": "path", "url": "/ext/drk_dienstabende" }
+  ],
+  "require": {
+    "rubeen/drk-dienstabende": "@dev",
+    "typo3/cms-backend": "^13.4",
+    "typo3/cms-core": "^13.4",
+    "typo3/cms-extbase": "^13.4",
+    "typo3/cms-fluid": "^13.4",
+    "typo3/cms-fluid-styled-content": "^13.4",
+    "typo3/cms-frontend": "^13.4",
+    "typo3/cms-install": "^13.4",
+    "typo3/cms-rte-ckeditor": "^13.4",
+    "typo3/cms-tstemplate": "^13.4"
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

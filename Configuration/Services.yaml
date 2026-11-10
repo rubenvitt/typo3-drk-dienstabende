@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Rubeen\DrkDienstabende\:
+    resource: '../Classes/*'
+
+  cache.drk_dienstabende:
+    class: TYPO3\CMS\Core\Cache\Frontend\FrontendInterface
+    factory: ['@TYPO3\CMS\Core\Cache\CacheManager', 'getCache']
+    arguments: ['drk_dienstabende']
+
+  # Public: TYPO3 instantiates data processors by class name from TypoScript.
+  Rubeen\DrkDienstabende\DataProcessing\EventsProcessor:
+    public: true
+    arguments:
+      $cache: '@cache.drk_dienstabende'

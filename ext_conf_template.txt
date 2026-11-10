@@ -1,0 +1,2 @@
+# cat=basic; type=string; label=Erlaubte Hosts für Termindaten: Komma-getrennt, z. B. termine.example.org. Andere Adressen werden nicht abgerufen. Leer = keine.
+allowedHosts =

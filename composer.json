@@ -1,0 +1,21 @@
+{
+  "name": "rubeen/drk-dienstabende",
+  "description": "Inhaltselement „Dienstabende“: zeigt Termine aus einer JSON-Adresse als Akkordeon im Stil der DRK-Seiten.",
+  "type": "typo3-cms-extension",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": "^8.1",
+    "typo3/cms-core": "^12.4 || ^13.4",
+    "typo3/cms-fluid-styled-content": "^12.4 || ^13.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rubeen\\DrkDienstabende\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "drk_dienstabende"
+    }
+  }
+}

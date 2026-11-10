@@ -1,0 +1,12 @@
+{
+  "events": [
+    { "start": "2026-11-04T19:00:00+01:00", "title": "Auftakt: Wer wir sind und was wir tun", "description": "Rundgang durch Unterkunft und Fahrzeughalle, Vorstellung der Fachgruppen. Ideal für den ersten Besuch.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" },
+    { "start": "2026-11-11T19:00:00+01:00", "title": "Reanimation und AED", "description": "Herz-Lungen-Wiederbelebung üben, mit Übungspuppen und Defibrillator.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" },
+    { "start": "2026-11-18T19:00:00+01:00", "title": "Funk und Kommunikation im Einsatz", "description": "Wie sich Einsatzkräfte verständigen: Digitalfunk, Lagekarte und Meldewege.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" },
+    { "start": "2026-11-25T19:00:00+01:00", "title": "Betreuung: Notunterkunft aufbauen", "description": "Feldbetten, Verpflegung, Registrierung – wie eine Notunterkunft entsteht.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" },
+    { "start": "2026-11-27T18:30:00+01:00", "title": "Praxisdienst draußen: Übung mit Fahrzeugen", "description": "Längerer Praxisdienst am Freitag. Bitte wetterfeste Kleidung mitbringen.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" },
+    { "start": "2026-12-02T19:00:00+01:00", "title": "Rettungshunde: Einblick in die Staffel", "description": "Die Rettungshundestaffel zeigt, wie Hund und Mensch nach Vermissten suchen.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" },
+    { "start": "2026-12-09T19:00:00+01:00", "title": "Strom und Licht: Technik im Einsatz", "description": "Stromerzeuger, Beleuchtung und Zeltaufbau.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" },
+    { "start": "2026-12-16T19:00:00+01:00", "title": "Letzter Dienstabend vor der Winterpause", "description": "Rückblick auf das Jahr und Ausblick auf 2027.", "location": "DRK-Unterkunft, Miesbacher Straße 4, 29525 Uelzen" }
+  ]
+}

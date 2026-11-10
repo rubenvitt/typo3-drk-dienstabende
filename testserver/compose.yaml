@@ -1,0 +1,12 @@
+services:
+  typo3:
+    build:
+      context: ..
+      dockerfile: testserver/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      # Edits to the extension show up without rebuilding (vendor/ symlinks to /ext).
+      - ..:/ext/drk_dienstabende
+      # Sample data, reachable inside the container as http://localhost/dienstabende.json
+      - ./dienstabende.json:/var/www/project/public/dienstabende.json:ro

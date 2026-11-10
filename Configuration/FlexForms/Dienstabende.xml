@@ -1,0 +1,59 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>Termine</sheetTitle>
+                <type>array</type>
+                <el>
+                    <url>
+                        <label>Adresse der Termindaten (JSON)</label>
+                        <description>Wird höchstens alle 15 Minuten abgerufen. Änderungen erscheinen also spätestens nach 15 Minuten.</description>
+                        <config>
+                            <type>input</type>
+                            <required>1</required>
+                            <eval>trim</eval>
+                            <placeholder>https://…/dienstabende.json</placeholder>
+                        </config>
+                    </url>
+                    <display>
+                        <label>Darstellung</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>Aufklappbare Liste</label>
+                                    <value>list</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>Aufklappbare Liste, nach Monaten</label>
+                                    <value>months</value>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <label>Nur der nächste Termin als Hinweis</label>
+                                    <value>next</value>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </display>
+                    <limit>
+                        <label>Höchstens so viele Termine (0 = alle)</label>
+                        <config>
+                            <type>number</type>
+                            <default>5</default>
+                            <range>
+                                <lower>0</lower>
+                            </range>
+                        </config>
+                    </limit>
+                    <moreLink>
+                        <label>Knopf „Alle Termine ansehen“ verlinkt auf (optional)</label>
+                        <config>
+                            <type>link</type>
+                        </config>
+                    </moreLink>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

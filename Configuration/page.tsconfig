@@ -1,0 +1,10 @@
+# TYPO3 12 builds the "new content element" wizard from TSconfig; 13 reads the TCA and merges this.
+mod.wizards.newContentElement.wizardItems.plugins {
+    elements.drkdienstabende_list {
+        iconIdentifier = content-accordion
+        title = Dienstabende
+        description = Termine aus einer JSON-Adresse als aufklappbare Liste
+        tt_content_defValues.CType = drkdienstabende_list
+    }
+    show := addToList(drkdienstabende_list)
+}
