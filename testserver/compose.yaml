@@ -4,7 +4,8 @@ services:
       context: ..
       dockerfile: testserver/Dockerfile
     ports:
-      - "8080:80"
+      # Only reachable from this machine: fixed admin password and debug output
+      - "127.0.0.1:8080:80"
     volumes:
       # Edits to the extension show up without rebuilding (vendor/ symlinks to /ext).
       - ..:/ext/drk_dienstabende

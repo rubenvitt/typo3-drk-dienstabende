@@ -56,8 +56,9 @@ final class EventsProcessor implements DataProcessorInterface, LoggerAwareInterf
         }
         // Editors set the URL, so the server only fetches from hosts an admin allowed (no SSRF into internal networks).
         $host = rtrim(strtolower((string)parse_url($url, PHP_URL_HOST)), '.');
-        if (!in_array($host, $this->allowedHosts(), true)) {
-            $this->logger?->warning('Dienstabende: host {host} is not in allowedHosts (extension configuration)', ['host' => $host]);
+        $port = parse_url($url, PHP_URL_PORT);
+        if (!in_array($host, $this->allowedHosts(), true) || !in_array($port, [null, 80, 443], true)) {
+            $this->logger?->warning('Dienstabende: host {host} (port {port}) is not allowed, see allowedHosts in the extension configuration', ['host' => $host, 'port' => $port ?? 'default']);
             return null;
         }
         $key = sha1($url);
@@ -73,7 +74,11 @@ final class EventsProcessor implements DataProcessorInterface, LoggerAwareInterf
             }
             $json = json_decode((string)$response->getBody(), true, 64, JSON_THROW_ON_ERROR);
         } catch (\Throwable $e) {
-            $this->logger?->warning('Dienstabende: loading {url} failed: {error}', ['url' => $url, 'error' => $e->getMessage()]);
+            // Without query string and exception message: both may carry an access token from the URL.
+            $this->logger?->warning('Dienstabende: loading {url} failed: {error}', [
+                'url' => $host . parse_url($url, PHP_URL_PATH),
+                'error' => get_class($e) . ($e->getCode() ? ' ' . $e->getCode() : ''),
+            ]);
             // Keep showing the last good data and retry after FRESH, instead of waiting for the timeout on every page view.
             $json = $entry['json'] ?? null;
         }

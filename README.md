@@ -90,7 +90,7 @@ Ungültige Einträge werden übersprungen. Für ein anderes Quellformat ändert 
   Die Seite selbst bricht nie ab.
 - Das Element wird ungecacht gerendert (`COA_INT`). Ein abgesagter Termin verschwindet deshalb
   spätestens nach 15 Minuten, ohne dass jemand den Seitencache leeren muss.
-- Abgerufen wird nur bei Hosts aus `allowedHosts`, Weiterleitungen werden nicht verfolgt. So kann
+- Abgerufen wird nur bei Hosts aus `allowedHosts` auf den Standard-Ports 80 und 443, Weiterleitungen werden nicht verfolgt. So kann
   die Redaktion den Server keine internen Adressen abfragen lassen. Alle Felder aus dem JSON werden
   HTML-maskiert ausgegeben.
 - Auf einer Seite mit eigenem Site-Package kurz prüfen, dass Überschrift und Rahmen so erscheinen
