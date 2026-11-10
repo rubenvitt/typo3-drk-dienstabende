@@ -7,6 +7,8 @@ Das Markup nutzt die Klassen des DRK-CMS (`<details>`-Akkordeon), eigenes CSS gi
 Getestet mit TYPO3 13.4.37 und 12.4.45. `testserver/` ist ein lokales TYPO3 13 in Docker zum
 Ausprobieren.
 
+**Schritt-für-Schritt-Anleitung** zu Veröffentlichung, Installation und Einrichtung: [docs/anleitung.md](docs/anleitung.md)
+
 ![Im DRK-Design](docs/screenshots/5-im-drk-design.png)
 
 ## Installation
